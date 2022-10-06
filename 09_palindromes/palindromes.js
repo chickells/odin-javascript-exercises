@@ -6,26 +6,59 @@
 // };
 
 function palindromes (string) {
-    const stringToArray = string.split('')
-    console.log(stringToArray);
 
-    const removeSpace = stringToArray.filter(e => String(e).trim()) // 1 DONE, WORKS
-    console.log(removeSpace);
+    let newString = string.toLowerCase().replace(/[^a-z]/g, "")
+    // remove capitalization
+    // replace does not modify 'string'
+    // /[^a-z]/ looks for ALL LETTERS (only lowercase bc we already lowered)
+    // 'g' looks for ALL INSTANCES of ALL LETTERS
+    // replace(___ , "") replaces only those letters....? fuck idk tbh
+    // maybe it replaces anything that ISNT a letter with blank,therefore deleting it
+
+    return (
+        newString
+            .split("")
+            .reverse()
+            .join("") === newString
+    );
+
+    // let newString = string.split('')
+    // console.log(newString);
+
+    // newString = newString.filter(e => String(e).trim()) // 1 DONE, WORKS
+    // console.log(newString);
     
-    const onlyLetters = removeSpace.filter(char => /[a-zA-Z]/.test(char));
-    console.log(onlyLetters); // 3
+    // let x = newString.filter(char => /[a-zA-Z]/.test(char));
+    // console.log(newString); // 3
 
-    const reversed = onlyLetters.reverse() // 2
-    console.log(reversed);
+    // let reversedString = newString.reverse() // 2
+    // console.log(reversedString);
+
+    // this works for the most part, just don't understand why it thinks
+    // the two are equal when i'm seeing them in the log, the two arrays are OBVIOUSLY different lol
+    // going to use a single rolling variable instead of new const every step
+    // const removeSpace = stringToArray.filter(e => String(e).trim()) // 1 DONE, WORKS
+    // console.log(removeSpace);
+    
+    // const onlyLetters = removeSpace.filter(char => /[a-zA-Z]/.test(char));
+    // console.log(onlyLetters); // 3
+
+    // const reversed = onlyLetters.reverse() // 2
+    // console.log(reversed);
 
 
     // const backToString = onlyLetters.join('')
     // console.log(backToString);
+    // console.log(newString.toString());
+    // console.log(reversedString.toString());
 
-    return reversed == onlyLetters // should return true or false..... *SHOULD* lol
+    // return newString === reversedString // should return true or false..... *SHOULD* lol
 };
 
-console.log(palindromes('racecar!'));
+// Wed 10.5 5.00pm
+// welp it works, totally stole that shit.
+// lowercase and remove nonletters first,
+// then split, reverse and join and see if its equal to before the reverse.
 
 // 10.5 Wed 1.35pm
 // FACK almost working
