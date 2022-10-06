@@ -31,6 +31,8 @@ function fibonacci (n) {
     return fib[n]
 }
 
+// holy fuck it works
+
 console.log(fibonacci(14));
 
 // create Fib as an array, looping over 'n' times
