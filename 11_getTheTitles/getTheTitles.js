@@ -1,10 +1,9 @@
-function getTheTitles (object) {
-    // let titles = Object.values(object.title)
-    // return titles
+function getTheTitles (array) {
+    let titles = array.map(item => item.title)
+    return titles
 };
 
-// so basically we need to sift through the object keys (title, author, etc)
-// and return the value of JUST 'title' keys
+// THIS IS A SIMPLE '.MAP' ARRAY/OBJECT METHOD
 
 const books = [
     {
@@ -17,7 +16,13 @@ const books = [
     }
   ]
 
-console.log(Object.entries(books));
+// let result = books.map(x => x.title)
+
+// console.log(result);
+
+// BOOM CUNTS, EASY. JUST A MAP.
+
+///////////////////////////////////
 
 // this isn't really making sense tbh but i think
 // it's something relatively simple, just a method i haven't learned yet.
