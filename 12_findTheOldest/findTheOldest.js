@@ -8,7 +8,6 @@ const people = [
     {
       name: "Carly",
       yearOfBirth: 2018,
-      yearOfDeath: 2022
     },
     {
       name: "Ray",
@@ -29,6 +28,11 @@ const totalYears = people.reduce((total, person) => {
         }} 
     return total + (person.yearOfDeath - person.yearOfBirth)
 }, 0)
+
+// each loop compare age to prev total (current total starting at 0)
+// if greater, set holder variable (x) to 'i' of our loop (looping to array.length)
+// if less than, move onto next step
+// at end, return array[x.name]
 
 // okay this works, now i need to take each iteration and 
 // compare it to the prior to see if it's greater or lesser than
