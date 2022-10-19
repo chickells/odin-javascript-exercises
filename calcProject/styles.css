@@ -1,0 +1,21 @@
+body, div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc-body {
+    background-color: blueviolet;
+    border: solid;
+    border-color: black;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+.display {
+    background-color: white;
+    border: solid;
+    border-color: black;
+    border-radius: 1px;
+}
