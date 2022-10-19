@@ -6,16 +6,24 @@ body, div {
 }
 
 .calc-body {
+    display: flex;
     background-color: blueviolet;
     border: solid;
     border-color: black;
     border-radius: 3px;
     padding: 20px;
+    gap: 20px;
 }
 
-.display {
+.screen {
     background-color: white;
     border: solid;
     border-color: black;
     border-radius: 1px;
+    padding: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
