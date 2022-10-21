@@ -1,3 +1,4 @@
+// operators 
 const add = function(num1, num2) {
 	return num1 + num2
 };
@@ -27,11 +28,39 @@ const factorial = function(x) {
   return product;
 }
 
+// operator
+
 function operate (operator, num1, num2) {
     return operator(num1, num2)
 }
 
-let operator = ""
+let operator = "asdf"
+
+// other stuff
+
+
+// modify display text as buttons are clicked
+// (can i PULL this info and store as 'const' in js before 
+// clicking operator button and typing 2nd number?)
+// YES I CAN LFG
+
+const display = document.getElementById('display')
+display.insertAdjacentText('beforeend', '!')
+
+// btns write to display, when operator is clicked, num1 = display.textContent
+// first btn click clears display and replaces with digit (additional operator clicks replace
+// first one until digit pressed)
+
+// following btn clicks add adjacenttext.  once equals is pressed,
+// num2 = display.textContent
+// call operate function with 'operator/num1/num2' stored values
+// set display to 'answer'
+// if digit it pressed, it restarts and sets diplay to that digit
+// if operator is pressed, display is set to num1 and process continues
+
+// can create 'onclick' listener for each button manually
+// OR can write one function to CREATE function for each button,
+// calling the functions buttonIDNAME or something like that....hmmm
 
 // operator is a placeholder that's set once you click button
 // function isn't actually called until you press equal

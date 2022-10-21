@@ -16,11 +16,18 @@ body, div {
 }
 
 .screen {
+    display: flex;
     background-color: white;
     border: solid;
     border-color: black;
     border-radius: 1px;
     padding: 10px;
+    width: 100px;
+    align-items: flex-end;
+}
+
+#display {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .buttons {
