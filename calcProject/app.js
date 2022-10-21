@@ -47,6 +47,22 @@ let operator = "asdf"
 const display = document.getElementById('display')
 display.insertAdjacentText('beforeend', '!')
 
+// const test = document.querySelector(".screen")
+// console.log(test.id);
+// ^^ i can pull the 'id' by this.  then i can loop through and declare event listeners
+// for each and i'll call it 'this.id', that'd be `${this.id}` right?
+
+// declare buttons
+// can i write one function to create these button variables and name
+// then "this.elementID" or something?
+
+// shit seems too complicated, going to just raw dog it
+
+const plus = document.getElementById('plus')
+plus.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '+')
+})
+
 // btns write to display, when operator is clicked, num1 = display.textContent
 // first btn click clears display and replaces with digit (additional operator clicks replace
 // first one until digit pressed)
