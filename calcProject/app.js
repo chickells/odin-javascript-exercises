@@ -1,6 +1,7 @@
 
 
-// operators 
+// operators, rounded to 5 decimal places
+
 const add = function(num1, num2) {
 	return parseFloat((Number(num1) + Number(num2)).toFixed(5))
 };
@@ -263,6 +264,15 @@ dot.addEventListener("click", function(){
     hayDot = true
   }
 })
+
+const deleteOmundo = document.getElementById('del')
+deleteOmundo.addEventListener("click", function(){
+  if (display.textContent[display.textContent.length - 1] == '.') {
+    hayDot = false;
+    display.textContent = display.textContent.slice(0, -1)
+  } else {
+  display.textContent = display.textContent.slice(0, -1)
+}})
 
 let num1Display = document.getElementById('num1')
 let num2Display = document.getElementById('num2')
