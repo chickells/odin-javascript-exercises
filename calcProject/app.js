@@ -41,6 +41,15 @@ function operate (operator, num1, num2) {
 
 let operator = "asdf"
 
+// isFinished checks to see if prev button was equals.  because then the next number
+// pressed would reset display to that number and restart the process
+// otherwise operator buttons work as normal.
+// so this is just a boolean
+// and each time I press a number it sets to false, but when i press equals it sets to true
+//  and 'if true' then set textContent to that number to "reset"
+
+let isFinished = false
+
 // other stuff
 
 
@@ -63,8 +72,6 @@ const display = document.getElementById('display')
 // shit seems too complicated, going to just raw dog it
 
 // operators button assignments
-
-
 
 const plus = document.getElementById('plus')
 plus.addEventListener("click", function(){
@@ -109,63 +116,119 @@ equals.addEventListener("click", function(){
   num2Display.textContent = num2
   operate(operator, num1, num2)
   display.textContent = answer
+  isFinished = true
 })
 
 // num pad btn assignments
 
 const seven = document.getElementById('seven')
 seven.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '7')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '7')
+  } else { 
+    display.textContent = '7'
+    isFinished = false
+}
 })
 
 const eight = document.getElementById('eight')
 eight.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '8')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '8')
+  } else { 
+    display.textContent = '8'
+    isFinished = false
+}
 })
 
 const nine = document.getElementById('nine')
 nine.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '9')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '9')
+  } else { 
+    display.textContent = '9'
+    isFinished = false
+}
 })
 
 const four = document.getElementById('four')
 four.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '4')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '4')
+  } else { 
+    display.textContent = '4'
+    isFinished = false
+}
 })
 
 const five = document.getElementById('five')
 five.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '5')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '5')
+  } else { 
+    display.textContent = '5'
+    isFinished = false
+}
 })
 
 const six = document.getElementById('six')
 six.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '6')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '6')
+  } else { 
+    display.textContent = '6'
+    isFinished = false
+}
 })
 
 const one = document.getElementById('one')
 one.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '1')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '1')
+  } else { 
+    display.textContent = '1'
+    isFinished = false
+}
 })
 
 const two = document.getElementById('two')
 two.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '2')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '2')
+  } else { 
+    display.textContent = '2'
+    isFinished = false
+}
 })
 
 const three = document.getElementById('three')
 three.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '3')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '3')
+  } else { 
+    display.textContent = '3'
+    isFinished = false
+}
 })
 
 const zero = document.getElementById('zero')
 zero.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '0')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '0')
+  } else { 
+    display.textContent = '0'
+    isFinished = false
+}
 })
 
 const dot = document.getElementById('dot')
 dot.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '.')
+  if (isFinished == false) {
+    display.insertAdjacentText('beforeend', '.')
+  } else { 
+    display.textContent = '.'
+    isFinished = false
+}
 })
 
 let num1Display = document.getElementById('num1')
