@@ -35,3 +35,7 @@ body, div {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.buttons .operator {
+    background-color: paleturquoise;
+}

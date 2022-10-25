@@ -86,57 +86,80 @@ const display = document.getElementById('display')
 
 // operators button assignments
 
+document.addEventListener('keydown', (event) {
+  if (event.key = '+') {
+    plusBtn()
+  } else if (event.key = '-') {
+    minusBtn()
+  } else if (event.key = '*') {
+    minusBtn()
+  } else if (event.key = '-') {
+    minusBtn()
+  }
+})
+
+// ^^^^^^^^^^^^^^^^^^ WHY DOESN'T THIS FUCKING WORK THIS IS STUPID
+// brain is fried, 2.5 hrs deep into this. got a lot done.  lil break time
+// then workout then lunch then FUCKIN YAY FIRST DAY WAS A RAGING SUCCESS!!!!!!!@!!!!!!
+
 const plus = document.getElementById('plus')
-plus.addEventListener("click", function(){
+plus.addEventListener("click", plusBtn)
+function plusBtn (){
   num1 = display.textContent
   num1Display.textContent = num1
   isMathing = true
   operator = add
   hayDot = false
-})
+}
+
 
 const minus = document.getElementById('minus')
-minus.addEventListener("click", function(){
+minus.addEventListener("click", minusBtn)
+function minusBtn (){
   num1 = display.textContent
   num1Display.textContent = num1
   operator = subtract
   isMathing = true
   hayDot = false
-})
+}
 
 const mult = document.getElementById('mult')
-mult.addEventListener("click", function(){
+mult.addEventListener("click", multBtn)
+function multBtn (){
   num1 = display.textContent
   num1Display.textContent = num1
   operator = multiply
   isMathing = true
   hayDot = false
-})
+}
 
 const divy = document.getElementById('divy')
-divy.addEventListener("click", function(){
+divy.addEventListener("click", divBtn)
+function divBtn (){
   num1 = display.textContent
   num1Display.textContent = num1
   operator = divide
   isMathing = true
   hayDot = false
-})
+}
 
 const clear = document.getElementById('clear')
-clear.addEventListener("click", function(){
+clear.addEventListener("click", clearBtn)
+function clearBtn (){
   display.textContent = ""
   hayDot = false
-})
+}
 
 const equals = document.getElementById('equals')
-equals.addEventListener("click", function(){
+equals.addEventListener("click", equalsBtn)
+function equalsBtn (){
   num2 = display.textContent;
   num2Display.textContent = num2
   operate(operator, num1, num2)
   display.textContent = answer
   isFinished = true
   hayDot = false
-})
+}
 
 // num pad btn assignments
 
