@@ -1,18 +1,24 @@
+
+
 // operators 
 const add = function(num1, num2) {
-	return Number(num1) + Number(num2)
+	return parseFloat((Number(num1) + Number(num2)).toFixed(5))
 };
 
 const subtract = function(num1, num2) {
-	return Number(num1) - Number(num2)
+	return parseFloat((Number(num1) - Number(num2)).toFixed(5))
 };
 
 const multiply = function(num1, num2) {
-    return Number(num1) * Number(num2)
+    return parseFloat((Number(num1) * Number(num2)).toFixed(5))
 };
 
 function divide (num1, num2) {
-    return Number(num1) / Number(num2)
+  if (num2 == 0) {
+    answer = `smh`
+  } else {
+    return parseFloat((Number(num1) / Number(num2)).toFixed(5))
+  }
 }
 
 const power = function(x, n) {
@@ -33,13 +39,17 @@ const factorial = function(x) {
 let num1 = 0
 let num2 = 0
 let answer = ""
+let operator = ""
 
 function operate (operator, num1, num2) {
+  if (operator == divide && num2 == 0) {
+    answer = `smh... (div by 0)`
+  } else {
     answer = operator(num1, num2)
     return answer
-}
+}}
 
-let operator = "asdf"
+
 
 // isFinished checks to see if prev button was equals.  because then the next number
 // pressed would reset display to that number and restart the process
@@ -49,6 +59,8 @@ let operator = "asdf"
 //  and 'if true' then set textContent to that number to "reset"
 
 let isFinished = false
+let isMathing = false
+let hayDot = false
 
 // other stuff
 
@@ -77,8 +89,9 @@ const plus = document.getElementById('plus')
 plus.addEventListener("click", function(){
   num1 = display.textContent
   num1Display.textContent = num1
-  display.textContent = ""
+  isMathing = true
   operator = add
+  hayDot = false
 })
 
 const minus = document.getElementById('minus')
@@ -86,7 +99,8 @@ minus.addEventListener("click", function(){
   num1 = display.textContent
   num1Display.textContent = num1
   operator = subtract
-  display.textContent = ""
+  isMathing = true
+  hayDot = false
 })
 
 const mult = document.getElementById('mult')
@@ -94,7 +108,8 @@ mult.addEventListener("click", function(){
   num1 = display.textContent
   num1Display.textContent = num1
   operator = multiply
-  display.textContent = ""
+  isMathing = true
+  hayDot = false
 })
 
 const divy = document.getElementById('divy')
@@ -102,12 +117,14 @@ divy.addEventListener("click", function(){
   num1 = display.textContent
   num1Display.textContent = num1
   operator = divide
-  display.textContent = ""
+  isMathing = true
+  hayDot = false
 })
 
 const clear = document.getElementById('clear')
 clear.addEventListener("click", function(){
   display.textContent = ""
+  hayDot = false
 })
 
 const equals = document.getElementById('equals')
@@ -117,118 +134,134 @@ equals.addEventListener("click", function(){
   operate(operator, num1, num2)
   display.textContent = answer
   isFinished = true
+  hayDot = false
 })
 
 // num pad btn assignments
 
 const seven = document.getElementById('seven')
 seven.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '7')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '7'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const eight = document.getElementById('eight')
 eight.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '8')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '8'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const nine = document.getElementById('nine')
 nine.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '9')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '9'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const four = document.getElementById('four')
 four.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '4')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '4'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const five = document.getElementById('five')
 five.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '5')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '5'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const six = document.getElementById('six')
 six.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '6')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '6'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const one = document.getElementById('one')
 one.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '1')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '1'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const two = document.getElementById('two')
 two.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '2')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '2'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const three = document.getElementById('three')
 three.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '3')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '3'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const zero = document.getElementById('zero')
 zero.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '0')
-  } else { 
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '0'
     isFinished = false
-}
+    isMathing = false
+  }
 })
 
 const dot = document.getElementById('dot')
 dot.addEventListener("click", function(){
-  if (isFinished == false) {
+  if (hayDot == true) {
+    console.log('already dot breh, continue');
+  } else if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '.')
-  } else { 
+    hayDot = true
+  } else if (isMathing == true || isFinished == true) {
     display.textContent = '.'
     isFinished = false
-}
+    isMathing = false
+    hayDot = true
+  }
 })
 
 let num1Display = document.getElementById('num1')
