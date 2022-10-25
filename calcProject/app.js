@@ -1,18 +1,18 @@
 // operators 
 const add = function(num1, num2) {
-	return num1 + num2
+	return Number(num1) + Number(num2)
 };
 
 const subtract = function(num1, num2) {
-	return num1 - num2
+	return Number(num1) - Number(num2)
 };
 
 const multiply = function(num1, num2) {
-    return num1 * num2
+    return Number(num1) * Number(num2)
 };
 
 function divide (num1, num2) {
-    return num1 / num2
+    return Number(num1) / Number(num2)
 }
 
 const power = function(x, n) {
@@ -30,8 +30,13 @@ const factorial = function(x) {
 
 // operator
 
+let num1 = 0
+let num2 = 0
+let answer = ""
+
 function operate (operator, num1, num2) {
-    return operator(num1, num2)
+    answer = operator(num1, num2)
+    return answer
 }
 
 let operator = "asdf"
@@ -45,7 +50,6 @@ let operator = "asdf"
 // YES I CAN LFG
 
 const display = document.getElementById('display')
-display.insertAdjacentText('beforeend', '!')
 
 // const test = document.querySelector(".screen")
 // console.log(test.id);
@@ -58,10 +62,114 @@ display.insertAdjacentText('beforeend', '!')
 
 // shit seems too complicated, going to just raw dog it
 
+// operators button assignments
+
+
+
 const plus = document.getElementById('plus')
 plus.addEventListener("click", function(){
-  display.insertAdjacentText('beforeend', '+')
+  num1 = display.textContent
+  num1Display.textContent = num1
+  display.textContent = ""
+  operator = add
 })
+
+const minus = document.getElementById('minus')
+minus.addEventListener("click", function(){
+  num1 = display.textContent
+  num1Display.textContent = num1
+  operator = subtract
+  display.textContent = ""
+})
+
+const mult = document.getElementById('mult')
+mult.addEventListener("click", function(){
+  num1 = display.textContent
+  num1Display.textContent = num1
+  operator = multiply
+  display.textContent = ""
+})
+
+const divy = document.getElementById('divy')
+divy.addEventListener("click", function(){
+  num1 = display.textContent
+  num1Display.textContent = num1
+  operator = divide
+  display.textContent = ""
+})
+
+const clear = document.getElementById('clear')
+clear.addEventListener("click", function(){
+  display.textContent = ""
+})
+
+const equals = document.getElementById('equals')
+equals.addEventListener("click", function(){
+  num2 = display.textContent;
+  num2Display.textContent = num2
+  operate(operator, num1, num2)
+  display.textContent = answer
+})
+
+// num pad btn assignments
+
+const seven = document.getElementById('seven')
+seven.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '7')
+})
+
+const eight = document.getElementById('eight')
+eight.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '8')
+})
+
+const nine = document.getElementById('nine')
+nine.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '9')
+})
+
+const four = document.getElementById('four')
+four.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '4')
+})
+
+const five = document.getElementById('five')
+five.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '5')
+})
+
+const six = document.getElementById('six')
+six.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '6')
+})
+
+const one = document.getElementById('one')
+one.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '1')
+})
+
+const two = document.getElementById('two')
+two.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '2')
+})
+
+const three = document.getElementById('three')
+three.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '3')
+})
+
+const zero = document.getElementById('zero')
+zero.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '0')
+})
+
+const dot = document.getElementById('dot')
+dot.addEventListener("click", function(){
+  display.insertAdjacentText('beforeend', '.')
+})
+
+let num1Display = document.getElementById('num1')
+let num2Display = document.getElementById('num2')
 
 // btns write to display, when operator is clicked, num1 = display.textContent
 // first btn click clears display and replaces with digit (additional operator clicks replace
