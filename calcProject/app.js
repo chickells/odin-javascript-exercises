@@ -73,40 +73,59 @@ let hayDot = false
 
 const display = document.getElementById('display')
 
-// const test = document.querySelector(".screen")
-// console.log(test.id);
-// ^^ i can pull the 'id' by this.  then i can loop through and declare event listeners
-// for each and i'll call it 'this.id', that'd be `${this.id}` right?
+// keyboard listeners
 
-// declare buttons
-// can i write one function to create these button variables and name
-// then "this.elementID" or something?
-
-// shit seems too complicated, going to just raw dog it
-
-// operators button assignments
-
-document.addEventListener('keydown', (event) {
-  if (event.key = '+') {
-    plusBtn()
-  } else if (event.key = '-') {
-    minusBtn()
-  } else if (event.key = '*') {
-    minusBtn()
-  } else if (event.key = '-') {
-    minusBtn()
+document.addEventListener('keydown', (e) => {
+  // console.log(`${e.key} button pressed`);
+  if (e.key == '+') {
+    plusBtn();
+  } else if (e.key == '-') {
+    minusBtn();
+  } else if (e.key == '*') {
+    multBtn();
+  } else if (e.key == '/') {
+    divBtn();
+  } else if (e.key == '9') {
+    nineBtn();
+  } else if (e.key == '8') {
+    eightBtn();
+  } else if (e.key == '7') {
+    sevenBtn();
+  } else if (e.key == '6') {
+    sixBtn();
+  } else if (e.key == '5') {
+    fiveBtn();
+  } else if (e.key == '4') {
+    fourBtn();
+  } else if (e.key == '3') {
+    threeBtn();
+  } else if (e.key == '2') {
+    twoBtn();
+  } else if (e.key == '1') {
+    oneBtn();
+  } else if (e.key == '0') {
+    zeroBtn();
+  } else if (e.key == '.') {
+    dotBtn();
+  } else if (e.key == 'Backspace' || e.key == 'Delete') {
+    delBtn();
+  } else if (e.key == 'Enter' || e.key == '=') {
+    equalsBtn();
+  } else if (e.key == 'c' || e.key == 'C') {
+    clearBtn();
   }
-})
+});
 
 // ^^^^^^^^^^^^^^^^^^ WHY DOESN'T THIS FUCKING WORK THIS IS STUPID
 // brain is fried, 2.5 hrs deep into this. got a lot done.  lil break time
 // then workout then lunch then FUCKIN YAY FIRST DAY WAS A RAGING SUCCESS!!!!!!!@!!!!!!
 
+// when calling function via event, you need the () with function.
+
 const plus = document.getElementById('plus')
 plus.addEventListener("click", plusBtn)
 function plusBtn (){
   num1 = display.textContent
-  num1Display.textContent = num1
   isMathing = true
   operator = add
   hayDot = false
@@ -117,7 +136,6 @@ const minus = document.getElementById('minus')
 minus.addEventListener("click", minusBtn)
 function minusBtn (){
   num1 = display.textContent
-  num1Display.textContent = num1
   operator = subtract
   isMathing = true
   hayDot = false
@@ -127,7 +145,6 @@ const mult = document.getElementById('mult')
 mult.addEventListener("click", multBtn)
 function multBtn (){
   num1 = display.textContent
-  num1Display.textContent = num1
   operator = multiply
   isMathing = true
   hayDot = false
@@ -137,7 +154,6 @@ const divy = document.getElementById('divy')
 divy.addEventListener("click", divBtn)
 function divBtn (){
   num1 = display.textContent
-  num1Display.textContent = num1
   operator = divide
   isMathing = true
   hayDot = false
@@ -154,7 +170,6 @@ const equals = document.getElementById('equals')
 equals.addEventListener("click", equalsBtn)
 function equalsBtn (){
   num2 = display.textContent;
-  num2Display.textContent = num2
   operate(operator, num1, num2)
   display.textContent = answer
   isFinished = true
@@ -164,7 +179,8 @@ function equalsBtn (){
 // num pad btn assignments
 
 const seven = document.getElementById('seven')
-seven.addEventListener("click", function(){
+seven.addEventListener("click", sevenBtn)
+function sevenBtn () {
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '7')
   } else if (isMathing == true || isFinished == true) {
@@ -172,10 +188,12 @@ seven.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
+
 
 const eight = document.getElementById('eight')
-eight.addEventListener("click", function(){
+eight.addEventListener("click", eightBtn)
+function eightBtn (){
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '8')
   } else if (isMathing == true || isFinished == true) {
@@ -183,10 +201,11 @@ eight.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
 
 const nine = document.getElementById('nine')
-nine.addEventListener("click", function(){
+nine.addEventListener("click", nineBtn)
+function nineBtn (){
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '9')
   } else if (isMathing == true || isFinished == true) {
@@ -194,10 +213,11 @@ nine.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
 
 const four = document.getElementById('four')
-four.addEventListener("click", function(){
+four.addEventListener("click", fourBtn)
+function fourBtn (){
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '4')
   } else if (isMathing == true || isFinished == true) {
@@ -205,10 +225,11 @@ four.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
 
 const five = document.getElementById('five')
-five.addEventListener("click", function(){
+five.addEventListener("click", fiveBtn)
+function fiveBtn (){
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '5')
   } else if (isMathing == true || isFinished == true) {
@@ -216,10 +237,11 @@ five.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
 
 const six = document.getElementById('six')
-six.addEventListener("click", function(){
+six.addEventListener("click", sixBtn)
+function sixBtn (){
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '6')
   } else if (isMathing == true || isFinished == true) {
@@ -227,10 +249,11 @@ six.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
 
 const one = document.getElementById('one')
-one.addEventListener("click", function(){
+one.addEventListener("click", oneBtn)
+function oneBtn (){
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '1')
   } else if (isMathing == true || isFinished == true) {
@@ -238,10 +261,11 @@ one.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
 
 const two = document.getElementById('two')
-two.addEventListener("click", function(){
+two.addEventListener("click", twoBtn)
+function twoBtn (){
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '2')
   } else if (isMathing == true || isFinished == true) {
@@ -249,10 +273,11 @@ two.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
 
 const three = document.getElementById('three')
-three.addEventListener("click", function(){
+three.addEventListener("click", threeBtn)
+function threeBtn (){
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '3')
   } else if (isMathing == true || isFinished == true) {
@@ -260,10 +285,11 @@ three.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
 
 const zero = document.getElementById('zero')
-zero.addEventListener("click", function(){
+zero.addEventListener("click", zeroBtn)
+function zeroBtn (){
   if (isFinished == false && isMathing == false) {
     display.insertAdjacentText('beforeend', '0')
   } else if (isMathing == true || isFinished == true) {
@@ -271,10 +297,11 @@ zero.addEventListener("click", function(){
     isFinished = false
     isMathing = false
   }
-})
+}
 
 const dot = document.getElementById('dot')
-dot.addEventListener("click", function(){
+dot.addEventListener("click", dotBtn)
+function dotBtn (){
   if (hayDot == true) {
     console.log('already dot breh, continue');
   } else if (isFinished == false && isMathing == false) {
@@ -286,20 +313,22 @@ dot.addEventListener("click", function(){
     isMathing = false
     hayDot = true
   }
-})
+}
 
 const deleteOmundo = document.getElementById('del')
-deleteOmundo.addEventListener("click", function(){
+deleteOmundo.addEventListener("click", delBtn)
+function delBtn (){
   if (display.textContent[display.textContent.length - 1] == '.') {
     hayDot = false;
     display.textContent = display.textContent.slice(0, -1)
   } else {
   display.textContent = display.textContent.slice(0, -1)
-}})
+}}
 
 let num1Display = document.getElementById('num1')
 let num2Display = document.getElementById('num2')
 
+// initial outline/tasks/
 // btns write to display, when operator is clicked, num1 = display.textContent
 // first btn click clears display and replaces with digit (additional operator clicks replace
 // first one until digit pressed)
